@@ -36,7 +36,7 @@ jobs:
           name: Building workflow
           command: |
             mkdir generated workflow
-            cp -r info.plist src/* workflow
+            cp -r icon.png info.plist src/* workflow
             . venv/bin/activate
             python workflow-build.py -o generated workflow
 
@@ -60,6 +60,6 @@ workflows:
       - build:
           filters:
             tags:
-              only: /[0-9]+\.[0-9]+\.[0-9]+/
+              only: /v[0-9]+\.[0-9]+/
             branches:
               ignore: /.*/
