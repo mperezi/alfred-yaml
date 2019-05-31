@@ -40,14 +40,14 @@ jobs:
             . venv/bin/activate
             python workflow-build.py -o generated workflow
 
-      # - run:
-      #     name: Creating GitHub Release
-      #     command: |
-      #       mkdir bin
-      #       # https://snippets.cacher.io/snippet/f1eb452be2d3fe7c9d51
-      #       BIN_PATH="$(basename $HUB_RELEASE .tgz)/bin/hub"
-      #       curl -fsSL $HUB_RELEASE | tar xzf - -C bin --transform="s,$(dirname $BIN_PATH)/,," $BIN_PATH
-      #       bin/hub release create -a generated/*.alfredworkflow -m "Release ${CIRCLE_TAG}" "${CIRCLE_TAG}"
+      - run:
+          name: Creating GitHub Release
+          command: |
+            mkdir bin
+            # https://snippets.cacher.io/snippet/f1eb452be2d3fe7c9d51
+            BIN_PATH="$(basename $HUB_RELEASE .tgz)/bin/hub"
+            curl -fsSL $HUB_RELEASE | tar xzf - -C bin --transform="s,$(dirname $BIN_PATH)/,," $BIN_PATH
+            bin/hub release create -a generated/*.alfredworkflow -m "Release ${CIRCLE_TAG}" "${CIRCLE_TAG}"
 
       - store_artifacts:
           path: generated
@@ -61,5 +61,5 @@ workflows:
           filters:
             tags:
               only: /v[0-9]+\.[0-9]+/
-            # branches:
-            #   ignore: /.*/
+            branches:
+              ignore: /.*/
