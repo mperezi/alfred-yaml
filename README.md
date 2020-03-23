@@ -1,10 +1,10 @@
-[![CircleCI](https://circleci.com/gh/mperezi/alfred-yaml.svg?style=svg)](https://circleci.com/gh/mperezi/alfred-yaml)
+[![Release](https://github.com/mperezi/alfred-yaml/workflows/Release/badge.svg)](https://github.com/mperezi/alfred-yaml/actions?query=workflow%3ARelease)
 
 # alfred-yaml
 
-[Alfred](https://www.alfredapp.com/) workflow to validate YAML documents
+[Alfred workflow](https://www.alfredapp.com/workflows/) to validate YAML documents
 
-![Alfred workflow in action ](demo.gif)
+![Alfred workflow in action](https://user-images.githubusercontent.com/43891734/77308822-d8510180-6cfb-11ea-8791-b9ea5d10a046.gif)
 
 ## Install
 
